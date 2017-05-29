@@ -68,7 +68,6 @@ app.controller('Hello', function ($scope, $http) {
         reputation: $scope.placeholder
     };
     $http.get('https://api.stackexchange.com/2.2/users/' + stackOverflowId+ '?order=desc&sort=reputation&site=stackoverflow').then(function (response) {
-        debugger;
         var userInfo = response.data.items[0];
         $scope.stackoverflow = {
             display_name: userInfo.display_name || $scope.failed,
