@@ -1,0 +1,23 @@
+# Theme customization is done on this file instead of _config.yml so that
+# you don't have to restart Jekyll to see changes.
+
+title: "后台Java-苗加谚(MiaoJiayan)"
+wechat: "13048866454"
+mail: "miao.jiayan@foxmail.com"
+stackoverflowId: "4016014"
+name: "苗加谚(MiaoJiayan)"
+job: "Java工程师"
+blog: "http://www.jianshu.com/users/b99b0edd4e77/latest_articles"
+introduce: 技能栈以Java后台为主。同时有Web前端(比如本简历)，Android端开发经验。目前意向为后端开发。英语通过了<b>CET6</b>，可熟练阅读英文需求文档与技术书籍。技术博客，GitHub开源与StackoverFlow问答详见右边。
+
+# Color scheme based on http://www.materialui.co/colors.
+# Possible values:
+# - default
+# - red
+# - pink
+# - brown
+# - blue
+# - purple
+# - teal
+# - green
+color: default

@@ -1,0 +1,5 @@
+_site
+_draft
+_sass
+.sass-cache
+Gemfile.lock
