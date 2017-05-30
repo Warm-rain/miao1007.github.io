@@ -1,8 +1,9 @@
 # Theme customization is done on this file instead of _config.yml so that
 # you don't have to restart Jekyll to see changes.
 
+# title for html's <title> and pdf's name
 title: "后台Java-苗加谚(MiaoJiayan)"
-wechat: "13048866454"
+wechat: "wxleopard"
 mail: "miao.jiayan@foxmail.com"
 stackoverflowId: "4016014"
 name: "苗加谚(MiaoJiayan)"
