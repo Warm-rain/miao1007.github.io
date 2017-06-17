@@ -7,7 +7,7 @@ var stackOverflowId = 4016014;
 var GitHubId = 'miao1007';
 var blogStartAge = 2014;
 var blogFollowers = 2347;
-
+console.log('welcome to view my resume');
 function remove(elem,classSelector) {
     var queryResult = elem[0].querySelector(classSelector);
     var wrappedQueryResult = angular.element(queryResult);
