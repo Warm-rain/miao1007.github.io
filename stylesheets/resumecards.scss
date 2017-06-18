@@ -99,6 +99,21 @@ $space-sm: 10px;
 $space-md: 20px;
 $space-lg: 30px;
 
+//override bootstrap
+.list-group-item{
+  padding: 3px 5px;
+  background-color: $color-heading;
+  border: 1px solid $color-sub;
+}
+.list-group {
+  // No need to set list-style: none; since .list-group-item is block level
+  margin-bottom: 0;
+}
+.badge {
+  background-color: $color-sub;
+}
+
+
 /*++ Base Tags +++++++++++++++++++++++*/
 
 body {

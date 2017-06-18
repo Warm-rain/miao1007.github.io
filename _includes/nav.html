@@ -1,9 +1,27 @@
 <!-- icons from http://fortawesome.github.io/Font-Awesome -->
 <!-- [[]] is for AngularJs-->
 <!-- {{}} is for jekyll -->
-<society icon="fa-home" href="{{site.data.resume.blog}}" name="Blog([[timeByNow]]Years, [[blogFollowers]]Followers)"></society>
-<society icon="fa-github" href="[[github.owner.html_url]]" name="[[github.owner.login]]([[github.star]]Stars, [[github.fork]]Forks)"></society>
-<society icon="fa-stack-exchange" href="[[stackoverflow.link]]" name="[[stackoverflow.display_name]]([[stackoverflow.reputation]]Reputations)"></society>
-<!-- long press and wechat browser will show 'Scan QR Code' -->
-<society ng-mouseenter="showQR(true)" ng-mouseleave="showQR(false)" icon="fa-weixin" name="{{site.data.resume.wechat}}"></society>
-<society icon="fa-envelope-o" href="mailto:{{site.data.resume.mail}}?subject=[Github]Job%20Opportunity%20For%20You&body=I%20have%20read%20your%20resume%20on github..." name="{{site.data.resume.mail}}"></society>
+<!--<li class="list-group-item">-->
+<!--<society ng-mouseenter="showQR(true)" ng-mouseleave="showQR(false)" icon="fa-weixin"-->
+<!--name="{{site.data.resume.wechat}}"></society>-->
+<!--</li>-->
+<ul class="list-group">
+    <li class="list-group-item">
+        <i class="fa fa-home fa-lg fa-fw"></i>
+        <a ng-href={{{{site.data.resume.blog}}}}>Blog</a><span
+            class="badge">[[blogFollowers]] Followers</span><span class="badge">[[timeByNow]] Years</span>
+    </li>
+    <li class="list-group-item">
+        <i class="fa fa-github fa-lg fa-fw"></i>
+        <a ng-href=[[github.owner.html_url]]>[[github.owner.login]]</a>
+        <span class="badge">[[github.fork]] Forks</span>
+        <span class="badge">[[github.star]] Stars</span>
+    </li>
+    <li class="list-group-item">
+        <i class="fa fa-stack-exchange fa-lg fa-fw"></i> <a ng-href=[[stackoverflow.link]]>[[stackoverflow.display_name]]</a><span
+            class="badge">[[stackoverflow.reputation]] Reputations</span>
+    </li>
+    <li class="list-group-item">
+        <i class="fa fa-envelope-o fa-lg fa-fw"></i> <a ng-href="mailto:{{site.data.resume.mail}}?subject=[Github]Job%20Opportunity%20For%20You&body=I%20have%20read%20your%20resume%20on github...">{{site.data.resume.mail}}</a>
+    </li>
+</ul>
