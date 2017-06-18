@@ -1,8 +1,6 @@
 ---
 ---
 
-
-$container-large-desktop: 970px;
 /* Thanks for kyleduo's advice */
 $font-family-base: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $headings-font-family: "Quando", sans-serif;
@@ -96,14 +94,10 @@ $color-heading: $theme-heading;
 
 $color-list: "default", "red", "pink", "brown", "blue", "purple", "teal", "green";
 
-
 $space-xs: 5px;
 $space-sm: 10px;
 $space-md: 20px;
 $space-lg: 30px;
-
-@import "bootstrap-sass/bootstrap";
-
 
 /*++ Base Tags +++++++++++++++++++++++*/
 
@@ -208,9 +202,20 @@ a {
 /*++ Classes +++++++++++++++++++++++*/
 
 /* Panel */
-
 .panel {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+
+}
+
+// see http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+.box {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box:hover {
+  z-index: -1;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
 }
 
 .panel-default {
@@ -243,15 +248,16 @@ a {
 
 .panel-body {
   padding: ($space-md) ($space-md) 0 ($space-md);
-  height: inherit;
+  height: auto;
   overflow: hidden;
 }
 
-.panel-body-img{
+.panel-body-img {
   float: right;
   width: $resume-img;
   height: $resume-img;
 }
+
 /* Navbar */
 
 .navbar-default {
@@ -260,23 +266,6 @@ a {
 
 .navbar {
   margin-bottom: $space-md * 2;
-}
-
-/* Button */
-
-.btn {
-  font-size: $font-size-base;
-}
-
-.btn-primary {
-  @include button-variant(#fff, $color-base, darken($color-base, 10%));
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      @include button-variant(#fff, map-get(map-get($all-colors, $color-name), "base"),
-              darken(map-get(map-get($all-colors, $color-name), "base"), 10%));
-    }
-  }
 }
 
 /* Modal */
@@ -475,21 +464,15 @@ script + p {
   text-align: center;
 }
 
-@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
-  .panel-body {
-    height: 320px;
-  }
-}
 
-@media (max-width: $screen-xs-max) {
-  .panel-body {
-    height: auto;
-  }
 
+@media (min-width: 768px) {
+  .container {
+    width: 740px;
+  }
   .resume-content {
     padding-top: $space-md;
   }
-
   .resume-pic {
     float: none;
     margin-bottom: $space-sm;
@@ -500,9 +483,20 @@ script + p {
   }
 }
 
-@media print {
-  @include make-grid(sm);
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
 
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media print {
+  //@include make-grid(sm);
   @page {
     size: A4;
   }
@@ -544,11 +538,10 @@ script + p {
   }
 
   .panel-body {
-    height: auto;
     padding: ($space-md)-5 ($space-md)-5 0 ($space-md)-5;
   }
 
-  .panel-body-img{
+  .panel-body-img {
     float: right;
     width: ($resume-img)*0.75;
     height: ($resume-img)*0.75;
