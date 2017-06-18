@@ -15,14 +15,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><script src="https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="{{'/stylesheets/resumecards.css' | prepend:site.baseurl }}">
     <title>
         {{site.data.resume.title}}
     </title>
 </head>
 <body>
-<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="{{'/stylesheets/resumecards.css' | prepend:site.baseurl }}">
 <div class="container resume-content" ng-controller="Hello">
     <div class="row">
         <!-- personal profile -->
@@ -81,7 +81,6 @@
         {%endfor%}
     </div>
 </div>
-<script src="https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js"></script>
 <script type="text/javascript" src="{{ '/js/app.js' | prepend:site.baseurl }}"></script>
 </body>
 </html>

@@ -6,18 +6,21 @@
 var stackOverflowId = 4016014;
 var GitHubId = 'miao1007';
 var blogStartAge = 2014;
-var blogFollowers = 2347;
+var blogWords = 139808;
 console.log('welcome to view my resume');
 function remove(elem,classSelector) {
     var queryResult = elem[0].querySelector(classSelector);
     var wrappedQueryResult = angular.element(queryResult);
     wrappedQueryResult.remove();
 }
+function kFormatter(num) {
+    return num > 999 ? (num/1000).toFixed(1) + 'K' : num
+}
 
 var app = angular.module('app', []);
 app.controller('Hello', function ($scope, $http) {
     $scope.placeholder = "loading...";
-    $scope.failed = "(Fetch Failed)";
+    $scope.failed = "NET_ERR";
     $scope.github = {
         owner: {
             login: $scope.placeholder,
@@ -26,7 +29,7 @@ app.controller('Hello', function ($scope, $http) {
         repo: [],
         star: $scope.placeholder
     };
-    $scope.blogFollowers = blogFollowers;
+    $scope.blogWords = kFormatter(blogWords);
     $scope.timeByNow = new Date().getFullYear() - blogStartAge;
     $http.get('https://api.github.com/users/' + GitHubId +'/repos?sort=updated').then(function (response) {
         //如果此处挂了说明API使用次数过多
@@ -72,7 +75,7 @@ app.controller('Hello', function ($scope, $http) {
         $scope.stackoverflow = {
             display_name: userInfo.display_name || $scope.failed,
             link: userInfo.link,
-            reputation: userInfo.reputation || 0
+            reputation: kFormatter(userInfo.reputation || 0)
         };
     }, function (err) {
         $scope.stackoverflow = {
