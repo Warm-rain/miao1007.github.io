@@ -24,13 +24,11 @@
     <li class="list-group-item">
         <i class="fa fa-weixin fa-lg fa-fw"></i>
         <span uib-dropdown on-toggle="toggled(open)" is-open="status.isOpen" ng-mouseover="status.isOpen=true" ng-mouseleave="status.isOpen=false">
-      <a href="#" id="simple-dropdown" uib-dropdown-toggle>
-        {{site.data.resume.wechat}}
-      </a>
-     <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-         <li role="menuitem"><img src="{{site.data.resume.wechatAvator}}" class='img-rounded qrcode'></li>
-     </ul>
-    </span>
+            <span id="simple-dropdown" uib-dropdown-toggle>{{site.data.resume.wechat}}</span>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li role="menuitem"><img src="{{site.data.resume.wechatAvator}}" class='img-rounded qrcode'></li>
+            </ul>
+        </span>
     </li>
     <li class="list-group-item">
         <i class="fa fa-envelope-o fa-lg fa-fw"></i> <a
