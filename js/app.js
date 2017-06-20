@@ -4,15 +4,13 @@
  */
 
 var stackOverflowId = 4016014;
+var stackAPI = 'https://api.stackexchange.com/2.2/users/' + stackOverflowId+ '?order=desc&sort=reputation&site=stackoverflow';
 var GitHubId = 'miao1007';
+var gitHubAPI = 'https://api.github.com/users/' + GitHubId +'/repos?sort=updated';
 var blogStartAge = 2014;
 var blogWords = 139808;
 console.log('welcome to view my resume');
-function remove(elem,classSelector) {
-    var queryResult = elem[0].querySelector(classSelector);
-    var wrappedQueryResult = angular.element(queryResult);
-    wrappedQueryResult.remove();
-}
+
 function kFormatter(num) {
     return num > 999 ? (num/1000).toFixed(1) + 'K' : num
 }
@@ -31,7 +29,7 @@ app.controller('Hello', function ($scope, $http) {
     };
     $scope.blogWords = kFormatter(blogWords);
     $scope.timeByNow = new Date().getFullYear() - blogStartAge;
-    $http.get('https://api.github.com/users/' + GitHubId +'/repos?sort=updated').then(function (response) {
+    $http.get(gitHubAPI).then(function (response) {
         //如果此处挂了说明API使用次数过多
         var stars = response.data.map(function (repo) {
             return repo.stargazers_count;
@@ -70,7 +68,7 @@ app.controller('Hello', function ($scope, $http) {
         link: "",
         reputation: $scope.placeholder
     };
-    $http.get('https://api.stackexchange.com/2.2/users/' + stackOverflowId+ '?order=desc&sort=reputation&site=stackoverflow').then(function (response) {
+    $http.get(stackAPI).then(function (response) {
         var userInfo = response.data.items[0];
         $scope.stackoverflow = {
             display_name: userInfo.display_name || $scope.failed,
@@ -96,39 +94,13 @@ app.config(function ($interpolateProvider) {
 });
 
 /**
- * custom tag `society`
- * eg:
- * <contact icon="fa-home" href="{{site.data.resume.blog}}" name="Blog"></contact>
- * icons from http://fortawesome.github.io/Font-Awesome
+ * for navigator
  */
-app.directive('society', function () {
-    return {
-        template: function (elem, attr) {
-            return '<p><i class="fa ' + attr.icon + ' fa-lg fa-fw"></i> <a ng-href="' + attr.href + '">' + attr.name + '</a></p>'
-        },
-        link: function (scope, elem, attr) {
-            scope.popup = "<span class=\'popupqr popup\'><div><img src=\'http://upload.jianshu.io/users/qrcodes/98641/1.pic_hd.jpg?imageMogr/thumbnail/320x320/quality/100\' class=\'img-rounded qrcode\'></div></span>";
-            scope.showQR = function (isShow) {
-                // alert("isShow" + isShow)
-                if (isShow){
-                    elem.append(scope.popup);
-                } else {
-                    remove(elem,'.popupqr');
-                }
-            };
-            scope.frame = '<embed width="200" height="200" class="frame popup" src="http://www.jianshu.com/u/b99b0edd4e77"></embed>';
-            scope.showFrame = function (isShow) {
-                if (isShow){
-                    elem.append(scope.frame);
-                } else {
-                    remove(elem,'.frame');
-                }
-            }
-        }
-    };
-});
-
 app.controller('nav', function ($scope, $log) {
+
+    $scope.status = {
+        isOpen: false
+    };
 
     $scope.toggled = function(open) {
         debugger;
