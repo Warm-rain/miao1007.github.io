@@ -1,6 +1,10 @@
 ---
 ---
 
+// see https://angular-ui.github.io/bootstrap
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
 /* Thanks for kyleduo's advice */
 $font-family-base: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $headings-font-family: "Quando", sans-serif;

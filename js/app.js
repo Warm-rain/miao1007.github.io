@@ -17,7 +17,7 @@ function kFormatter(num) {
     return num > 999 ? (num/1000).toFixed(1) + 'K' : num
 }
 
-var app = angular.module('app', []);
+var app = angular.module('app', ['ui.bootstrap']);
 app.controller('Hello', function ($scope, $http) {
     $scope.placeholder = "loading...";
     $scope.failed = "NET_ERR";
@@ -125,5 +125,13 @@ app.directive('society', function () {
                 }
             }
         }
+    };
+});
+
+app.controller('nav', function ($scope, $log) {
+
+    $scope.toggled = function(open) {
+        debugger;
+        $log.log('Dropdown is now: ', open);
     };
 });
