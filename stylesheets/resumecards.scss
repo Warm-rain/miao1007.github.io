@@ -1,9 +1,9 @@
 ---
 ---
-
-// see https://angular-ui.github.io/bootstrap
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-
+  // see https://angular-ui.github.io/bootstrap
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
 
 /* Thanks for kyleduo's advice */
 $font-family-base: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -104,19 +104,20 @@ $space-md: 20px;
 $space-lg: 30px;
 
 //override bootstrap
-.list-group-item{
+.list-group-item {
   padding: 3px 5px;
   background-color: $color-heading;
   border: 1px solid $color-sub;
 }
+
 .list-group {
   // No need to set list-style: none; since .list-group-item is block level
   margin-bottom: 0;
 }
+
 .badge {
   background-color: $color-sub;
 }
-
 
 /*++ Base Tags +++++++++++++++++++++++*/
 
@@ -483,9 +484,10 @@ script + p {
   text-align: center;
 }
 
-
-
-@media (min-width: 768px) {
+/**
+* for tablet
+ */
+@media (min-width: 768px) and (max-width: 991px){
   .container {
     width: 740px;
   }
@@ -500,9 +502,12 @@ script + p {
       margin-left: 0;
     }
   }
+  .badge {
+    visibility: hidden;
+  }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991px) and (max-width: 1199px) {
   .container {
     width: 960px;
   }
@@ -529,7 +534,6 @@ script + p {
     size: A4;
     margin: 0;
   }
-
 
   body {
     background-color: transparent !important;
@@ -617,6 +621,5 @@ script + p {
       font-size: $font-size-base - 5;
     }
   }
-
 
 }

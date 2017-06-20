@@ -8,8 +8,9 @@
 <ul class="list-group" ng-controller="nav">
     <li class="list-group-item">
         <i class="fa fa-home fa-lg fa-fw"></i>
-        <a ng-href={{site.data.resume.blog}}>Blog</a><span
-            class="badge">[[blogWords]] Words</span><span class="badge">[[timeByNow]] Years</span>
+        <a ng-href={{site.data.resume.blog}}>Blog</a>
+        <span class="badge">[[blogWords]] Words</span>
+        <span class="badge">[[timeByNow]] Years</span>
     </li>
     <li class="list-group-item">
         <i class="fa fa-github fa-lg fa-fw"></i>
@@ -18,8 +19,9 @@
         <span class="badge">[[github.star]] Stars</span>
     </li>
     <li class="list-group-item">
-        <i class="fa fa-stack-exchange fa-lg fa-fw"></i> <a ng-href=[[stackoverflow.link]]>[[stackoverflow.display_name]]</a><span
-            class="badge">[[stackoverflow.reputation]] Reputations</span>
+        <i class="fa fa-stack-exchange fa-lg fa-fw"></i>
+        <a ng-href=[[stackoverflow.link]]>[[stackoverflow.display_name]]</a>
+        <span class="badge">[[stackoverflow.reputation]] Reputations</span>
     </li>
     <li class="list-group-item">
         <i class="fa fa-weixin fa-lg fa-fw"></i>
@@ -31,7 +33,7 @@
         </span>
     </li>
     <li class="list-group-item">
-        <i class="fa fa-envelope-o fa-lg fa-fw"></i> <a
-            ng-href="mailto:{{site.data.resume.mail}}?subject=[Github]Job%20Opportunity%20For%20You&body=I%20have%20read%20your%20resume%20on github...">{{site.data.resume.mail}}</a>
+        <i class="fa fa-envelope-o fa-lg fa-fw"></i>
+        <a ng-href="mailto:{{site.data.resume.mail}}?subject=[Github]Job%20Opportunity%20For%20You&body=I%20have%20read%20your%20resume%20on github...">{{site.data.resume.mail}}</a>
     </li>
 </ul>
