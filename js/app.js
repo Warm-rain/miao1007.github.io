@@ -16,6 +16,16 @@ function kFormatter(num) {
 }
 
 var app = angular.module('app', ['ui.bootstrap']);
+
+/**
+ * [[]] is for AngularJS
+ * {{}} is for Jekyll
+ */
+app.config(function ($interpolateProvider) {
+    $interpolateProvider.startSymbol('[[');
+    $interpolateProvider.endSymbol(']]');
+});
+
 app.controller('Hello', function ($scope, $http) {
     $scope.placeholder = "loading...";
     $scope.failed = "NET_ERR";
@@ -82,15 +92,6 @@ app.controller('Hello', function ($scope, $http) {
             reputation: $scope.failed
         };
     })
-});
-
-/**
- * [[]] is for AngularJS
- * {{}} is for Jekyll
- */
-app.config(function ($interpolateProvider) {
-    $interpolateProvider.startSymbol('[[');
-    $interpolateProvider.endSymbol(']]');
 });
 
 /**
