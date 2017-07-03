@@ -240,42 +240,31 @@ a {
 
 .panel-default {
   border: none;
-}
-
-.panel-default > .panel-heading {
-  background-color: $color-heading;
-  border: none;
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      background-color: map-get(map-get($all-colors, $color-name), "heading");
-    }
+  .panel-heading {
+    background-color: $color-heading;
+    border: none;
+    height: 35px;
+    overflow: hidden;
   }
-}
+  .panel-title {
+    font-weight: bold;
+    font-size: $font-size-base;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
 
-.panel-heading {
-  height: 35px;
-  overflow: hidden;
-}
+  .panel-body {
+    padding: ($space-md) ($space-md) 0 ($space-md);
+    height: auto;
+    overflow: hidden;
+  }
 
-.panel-title {
-  font-weight: bold;
-  font-size: $font-size-base;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-.panel-body {
-  padding: ($space-md) ($space-md) 0 ($space-md);
-  height: auto;
-  overflow: hidden;
-}
-
-.panel-body-img {
-  float: right;
-  width: $resume-img;
-  height: $resume-img;
+  .panel-body-img {
+    float: right;
+    width: $resume-img;
+    height: $resume-img;
+  }
 }
 
 /* Navbar */
@@ -485,6 +474,10 @@ script + p {
 }
 
 /**
+* for phone
+ */
+
+/**
 * for tablet
  */
 @media (min-width: 768px) and (max-width: 991px){
@@ -527,12 +520,18 @@ script + p {
 
   .container {
     width: 210mm;
-    height: 297mm;
+    height: auto;
   }
 
   @page {
     size: A4;
     margin: 0;
+  }
+
+  .badge {
+    font-size: $font-size-base - 5;
+    background-color: $color-sub;
+    font-weight: 500;
   }
 
   body {
@@ -559,25 +558,28 @@ script + p {
     .panel {
       box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
       border: 1px solid rgba(0, 0, 0, .1);
-    }
+      margin-bottom: ($space-md)-10;
 
-    .panel-heading {
-      height: auto;
-      overflow: hidden;
-    }
+      .panel-heading {
+        height: auto;
+        background-color: $color-heading !important;
+        overflow: hidden;
+        padding: ($space-md)-15 ($space-md)-5 ($space-md)-15 ($space-md)-5;
+      }
 
-    .panel-title {
-      font-size: $font-size-base - 6;
-    }
+      .panel-title {
+        font-size: $font-size-base - 6;
+      }
 
-    .panel-body {
-      padding: ($space-md)-5 ($space-md)-5 0 ($space-md)-5;
-    }
+      .panel-body {
+        padding: ($space-md)-15 ($space-md)-5 ($space-md)-15 ($space-md)-5;
+      }
 
-    .panel-body-img {
-      float: right;
-      width: ($resume-img)*0.75;
-      height: ($resume-img)*0.75;
+      .panel-body-img {
+        float: right;
+        width: ($resume-img)*0.75;
+        height: ($resume-img)*0.75;
+      }
     }
 
     .resume-content {
