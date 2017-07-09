@@ -8,7 +8,7 @@ var stackAPI = 'https://api.stackexchange.com/2.2/users/' + stackOverflowId+ '?o
 var GitHubId = 'miao1007';
 var gitHubAPI = 'https://api.github.com/users/' + GitHubId +'/repos?sort=updated';
 var blogStartAge = 2014;
-var blogWords = 139808;
+var blogWords = 141974;
 console.log('welcome to view my resume');
 
 function kFormatter(num) {
