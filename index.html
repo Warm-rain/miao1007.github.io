@@ -55,27 +55,30 @@
                     <!-- .img-rounded get from bootstrap -->
                     <img src="{{ card.prev }}" class="img-rounded panel-body-img">
                     {% endif %}
+
                     {% if card.heading %}
                     <h4>
                         {{ card.heading }}
+                        {% if card.subheading %}
+                            <span class="resume-subheading">{{ card.subheading }}</span>
+                        {% endif %}
                     </h4>
                     {% endif %}
-                    {% if card.subheading %}
-                    <p class="resume-subheading">
-                        {{ card.subheading }}
-                    </p>
-                    {% endif %}
+
                     {% if card.duration %}
                     <p class="resume-duration">
                         {{ card.duration }}
                     </p>
                     {% endif %}
+
                     {% if card.location %}
                     <p class="resume-location">
                         {{ card.location }}
                     </p>
                     {% endif %}
+
                     {{ card.content }}
+
                 </div>
                 {%endfor%}
             </div>
@@ -97,12 +100,7 @@
 
 <script type="text/javascript" src="{{ '/js/app.js' | prepend:site.baseurl }}"></script>
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-102296742-1', 'auto');
-    ga('send', 'pageview');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', {{site.data.resume.analyticsId}}, 'auto');ga('send', 'pageview');
 </script>
 </body>
 </html>

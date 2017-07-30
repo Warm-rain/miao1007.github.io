@@ -4,6 +4,8 @@
 # title for html's <title> and pdf's name
 title: "后台Java-Miao1007"
 wechat: "wxleopard"
+# see https://www.google-analytics.com
+analyticsId: "'UA-102296742-1'"
 wechatAvator: "http://upload.jianshu.io/users/qrcodes/98641/1.pic_hd.jpg?imageMogr/thumbnail/320x320/quality/100"
 mail: "miao1007@gmail.com"
 stackoverflowId: "4016014"
@@ -11,7 +13,6 @@ name: "Miao1007"
 job: "Java工程师"
 blog: "http://www.jianshu.com/users/b99b0edd4e77"
 introduce: 技能栈以Java后台为主。同时有Web前端，Android端开发经验，以及带小型团队经验。目前意向为后端开发。英语通过了<b>CET6</b>，可熟练阅读英文需求文档与技术书籍。技术博客，GitHub等信息详见右边。
-
 # Color scheme based on http://www.materialui.co/colors.
 # Possible values:
 # - default
