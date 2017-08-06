@@ -1,7 +1,7 @@
 <!-- icons from http://fortawesome.github.io/Font-Awesome -->
 <!-- [[]] is for AngularJs-->
 <!-- {{}} is for jekyll -->
-<ul class="list-group" ng-controller="nav">
+<ul class="list-group hidden-print" ng-controller="nav">
     <li class="list-group-item">
         <i class="fa fa-home fa-lg fa-fw"></i>
         <a ng-href={{site.data.resume.blog}}>Blog</a>
@@ -14,7 +14,7 @@
         <span class="badge">[[github.fork]] Forks</span>
         <span class="badge">[[github.star]] Stars</span>
     </li>
-    <li class="list-group-item hidden-print">
+    <li class="list-group-item">
         <i class="fa fa-stack-exchange fa-lg fa-fw"></i>
         <a ng-href=[[stackoverflow.link]]>{{site.data.resume.name}}</a>
         <span class="badge">[[stackoverflow.reputation]] Reputations</span>
